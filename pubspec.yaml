@@ -1,0 +1,36 @@
+name: tolaria_android
+description: Tolaria-compatible Markdown notes app for Android with Git sync.
+publish_to: 'none'
+version: 0.1.22+23
+
+environment:
+  sdk: ^3.7.2
+  flutter: ">=3.29.3"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Git operations without a system git binary (bundles libgit2).
+  # Required for Android, where no git executable exists.
+  git2dart: ^0.5.5
+
+  flutter_markdown: ^0.7.7
+  yaml: ^3.1.2
+  path: ^1.9.0
+  flutter_riverpod: ^2.5.1
+  shared_preferences: ^2.3.2
+  path_provider: ^2.1.4
+
+  # Git credentials at rest: SharedPreferences is plain text on disk, and a
+  # Gitee token in it is a token in plain text. Keystore-backed storage is the
+  # minimum bar for a secret the user asked to be remembered.
+  flutter_secure_storage: ^9.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

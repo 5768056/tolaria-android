@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The desktop icon is a white squircle with a blue drop, so the adaptive
+         background is the same near-white the plate uses (#FFFFFF with a hint
+         of blue keeps it from looking grey next to other icons). -->
+    <color name="ic_launcher_background">#FFFFFF</color>
+</resources>

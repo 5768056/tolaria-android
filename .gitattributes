@@ -1,0 +1,24 @@
+# Normalise line endings: keep LF in the repository and in the working tree.
+# Without this, Windows' core.autocrlf=true rewrites shell scripts to CRLF and
+# they fail on Linux/macOS with "bad interpreter: /bin/bash^M".
+* text=auto eol=lf
+
+# Shell scripts must stay LF — a CRLF shebang is a hard error, not a warning.
+*.sh   text eol=lf
+*.bash text eol=lf
+
+# Windows-only launchers, if any are added later, want CRLF.
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+
+# Binary assets: never touch these.
+*.png  binary
+*.jpg  binary
+*.webp binary
+*.jar  binary
+*.keystore binary
+*.jks  binary
+
+# Generated / lock files that are legitimately line-ending sensitive.
+gradlew     text eol=lf
+gradlew.bat text eol=crlf
